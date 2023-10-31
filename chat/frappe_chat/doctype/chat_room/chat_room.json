@@ -12,7 +12,9 @@
   "last_message",
   "is_read",
   "guest",
-  "users"
+  "users",
+  "customer_task",
+  "chat_bot"
  ],
  "fields": [
   {
@@ -59,11 +61,23 @@
    "fieldtype": "Table MultiSelect",
    "label": "Users",
    "options": "Chat Room User"
+  },
+  {
+   "fieldname": "customer_task",
+   "fieldtype": "Link",
+   "label": "Customer Task",
+   "options": "Customer Task"
+  },
+  {
+   "fieldname": "chat_bot",
+   "fieldtype": "Link",
+   "label": "Chat Bot",
+   "options": "Chat Bot"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-27 17:10:21.195844",
+ "modified": "2023-10-15 08:29:50.500793",
  "modified_by": "Administrator",
  "module": "Frappe Chat",
  "name": "Chat Room",
@@ -81,8 +95,21 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "End User",
+   "share": 1,
+   "write": 1
   }
  ],
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "states": []
 }

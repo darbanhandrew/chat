@@ -8,7 +8,14 @@
   "sender",
   "sender_email",
   "room",
-  "content"
+  "content",
+  "content_type",
+  "refrence_doctype",
+  "refrence_doc",
+  "chat_bot",
+  "action_required",
+  "action_type",
+  "action_user"
  ],
  "fields": [
   {
@@ -39,11 +46,53 @@
    "in_list_view": 1,
    "label": "Content",
    "reqd": 1
+  },
+  {
+   "fieldname": "content_type",
+   "fieldtype": "Select",
+   "label": "Content Type",
+   "options": "text\nappointment\nbid"
+  },
+  {
+   "fieldname": "refrence_doctype",
+   "fieldtype": "Link",
+   "label": "Refrence Doctype",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "refrence_doc",
+   "fieldtype": "Dynamic Link",
+   "label": "Refrence Doc",
+   "options": "refrence_doctype"
+  },
+  {
+   "fieldname": "chat_bot",
+   "fieldtype": "Link",
+   "label": "Chat Bot",
+   "options": "Chat Bot"
+  },
+  {
+   "default": "0",
+   "fieldname": "action_required",
+   "fieldtype": "Check",
+   "label": "Action Required"
+  },
+  {
+   "fieldname": "action_type",
+   "fieldtype": "Select",
+   "label": "Action Type",
+   "options": "appointment"
+  },
+  {
+   "fieldname": "action_user",
+   "fieldtype": "Link",
+   "label": "Action User",
+   "options": "User"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-27 17:10:49.064270",
+ "modified": "2023-10-20 17:43:00.733094",
  "modified_by": "Administrator",
  "module": "Frappe Chat",
  "name": "Chat Message",
@@ -61,10 +110,23 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "End User",
+   "share": 1,
+   "write": 1
   }
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "track_changes": 1,
  "track_seen": 1
 }
